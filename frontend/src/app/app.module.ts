@@ -1,19 +1,19 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { SignupComponent } from './auth/signup/signup.component';
-import { LoginComponent } from './auth/login/login.component';
-import { SauceListComponent } from './sauce-list/sauce-list.component';
-import { SingleSauceComponent } from './single-sauce/single-sauce.component';
-import { SauceFormComponent } from './sauce-form/sauce-form.component';
-import { HeaderComponent } from './header/header.component';
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatProgressSpinnerModule } from '@angular/material';
-import { AuthInterceptor } from './interceptors/auth-interceptor';
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
+import { SignupComponent } from "./auth/signup/signup.component";
+import { LoginComponent } from "./auth/login/login.component";
+import { SauceListComponent } from "./sauce-list/sauce-list.component";
+import { SingleSauceComponent } from "./single-sauce/single-sauce.component";
+import { SauceFormComponent } from "./sauce-form/sauce-form.component";
+import { HeaderComponent } from "./header/header.component";
+import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
+import { ReactiveFormsModule } from "@angular/forms";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { MatButtonModule, MatProgressSpinnerModule } from "@angular/material";
+import { AuthInterceptor } from "./interceptors/auth-interceptor";
 
 @NgModule({
   declarations: [
@@ -23,7 +23,7 @@ import { AuthInterceptor } from './interceptors/auth-interceptor';
     SauceListComponent,
     SingleSauceComponent,
     SauceFormComponent,
-    HeaderComponent
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,9 +32,11 @@ import { AuthInterceptor } from './interceptors/auth-interceptor';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatProgressSpinnerModule,
-    MatButtonModule
+    MatButtonModule,
   ],
-  providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}],
-  bootstrap: [AppComponent]
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
