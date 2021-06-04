@@ -1,12 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from '../../services/auth.service';
-import { Router } from '@angular/router';
+import { Component, OnInit } from "@angular/core";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { AuthService } from "../../services/auth.service";
+import { Router } from "@angular/router";
 
 @Component({
-  selector: 'app-signup',
-  templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.scss'],
+  selector: "app-signup",
+  templateUrl: "./signup.component.html",
+  styleUrls: ["./signup.component.scss"],
 })
 export class SignupComponent implements OnInit {
   signupForm: FormGroup;
@@ -28,8 +28,8 @@ export class SignupComponent implements OnInit {
 
   onSignup() {
     this.loading = true;
-    const email = this.signupForm.get('email').value;
-    const password = this.signupForm.get('password').value;
+    const email = this.signupForm.get("email").value;
+    const password = this.signupForm.get("password").value;
     this.auth
       .createUser(email, password)
       .then((response: { message: string }) => {
@@ -38,7 +38,7 @@ export class SignupComponent implements OnInit {
           .loginUser(email, password)
           .then(() => {
             this.loading = false;
-            this.router.navigate(['/sauces']);
+            this.router.navigate(["/sauces"]);
           })
           .catch((error) => {
             this.loading = false;

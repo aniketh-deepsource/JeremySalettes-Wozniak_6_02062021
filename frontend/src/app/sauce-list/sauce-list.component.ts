@@ -1,13 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { SaucesService } from '../services/sauces.service';
-import { Subscription } from 'rxjs';
-import { Sauce } from '../models/Sauce.model';
-import { Router } from '@angular/router';
+import { Component, OnInit } from "@angular/core";
+import { SaucesService } from "../services/sauces.service";
+import { Subscription } from "rxjs";
+import { Sauce } from "../models/Sauce.model";
+import { Router } from "@angular/router";
 
 @Component({
-  selector: 'app-sauce-list',
-  templateUrl: './sauce-list.component.html',
-  styleUrls: ['./sauce-list.component.scss'],
+  selector: "app-sauce-list",
+  templateUrl: "./sauce-list.component.html",
+  styleUrls: ["./sauce-list.component.scss"],
 })
 export class SauceListComponent implements OnInit {
   sauceSub: Subscription;
@@ -34,6 +34,6 @@ export class SauceListComponent implements OnInit {
   }
 
   onClickSauce(id: string) {
-    this.router.navigate(['sauce', id]);
+    this.router.navigate(["sauce", id]);
   }
 }
