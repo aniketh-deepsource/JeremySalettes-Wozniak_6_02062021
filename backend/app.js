@@ -15,8 +15,8 @@ mongoose
     "mongodb+srv://AlchTech:5nAExNvXmC5Irc58@cluster0.ykpoo.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
     { useNewUrlParser: true, useUnifiedTopology: true }
   )
-  .then(() => console.log("Connexion à MongoDB réussie !"))
-  .catch(() => console.log("Connexion à MongoDB échouée !"));
+  .then(() => )
+  .catch(() => );
 
 // CORS Autorisation
 app.use((req, res, next) => {
