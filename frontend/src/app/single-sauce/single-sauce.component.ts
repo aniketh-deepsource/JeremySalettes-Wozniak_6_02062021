@@ -1,13 +1,13 @@
-import { Component, OnInit } from "@angular/core";
-import { Sauce } from "../models/Sauce.model";
-import { SaucesService } from "../services/sauces.service";
-import { ActivatedRoute, Router } from "@angular/router";
-import { AuthService } from "../services/auth.service";
+import { Component, OnInit } from '@angular/core';
+import { Sauce } from '../models/Sauce.model';
+import { SaucesService } from '../services/sauces.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 @Component({
-  selector: "app-single-sauce",
-  templateUrl: "./single-sauce.component.html",
-  styleUrls: ["./single-sauce.component.scss"],
+  selector: 'app-single-sauce',
+  templateUrl: './single-sauce.component.html',
+  styleUrls: ['./single-sauce.component.scss'],
 })
 export class SingleSauceComponent implements OnInit {
   loading: boolean;
@@ -79,11 +79,11 @@ export class SingleSauceComponent implements OnInit {
   }
 
   onBack() {
-    this.router.navigate(["/sauces"]);
+    this.router.navigate(['/sauces']);
   }
 
   onModify() {
-    this.router.navigate(["/modify-sauce", this.sauce._id]);
+    this.router.navigate(['/modify-sauce', this.sauce._id]);
   }
 
   onDelete() {
@@ -93,7 +93,7 @@ export class SingleSauceComponent implements OnInit {
       .then((response: { message: string }) => {
         console.log(response.message);
         this.loading = false;
-        this.router.navigate(["/sauces"]);
+        this.router.navigate(['/sauces']);
       })
       .catch((error) => {
         this.loading = false;

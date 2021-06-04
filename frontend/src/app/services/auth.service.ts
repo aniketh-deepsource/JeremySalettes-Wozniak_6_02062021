@@ -1,10 +1,10 @@
-import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
-import { BehaviorSubject } from "rxjs";
-import { Router } from "@angular/router";
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { BehaviorSubject } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
 })
 export class AuthService {
   isAuth$ = new BehaviorSubject<boolean>(false);
@@ -16,7 +16,7 @@ export class AuthService {
   createUser(email: string, password: string) {
     return new Promise((resolve, reject) => {
       this.http
-        .post("http://localhost:3000/api/auth/signup", {
+        .post('http://localhost:3000/api/auth/signup', {
           email: email,
           password: password,
         })
@@ -42,7 +42,7 @@ export class AuthService {
   loginUser(email: string, password) {
     return new Promise((resolve, reject) => {
       this.http
-        .post("http://localhost:3000/api/auth/login", {
+        .post('http://localhost:3000/api/auth/login', {
           email: email,
           password: password,
         })
@@ -64,6 +64,6 @@ export class AuthService {
     this.authToken = null;
     this.userId = null;
     this.isAuth$.next(false);
-    this.router.navigate(["login"]);
+    this.router.navigate(['login']);
   }
 }
