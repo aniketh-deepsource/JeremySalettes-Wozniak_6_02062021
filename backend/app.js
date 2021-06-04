@@ -7,7 +7,6 @@ const app = express();
 // BASE DE DONNEES
 const mongoose = require("mongoose");
 
-
 // USER
 const userRoutes = require("./routes/user");
 
@@ -15,7 +14,6 @@ const userRoutes = require("./routes/user");
 const bodyParser = require("body-parser");
 
 const sauceRoutes = require("./routes/sauce");
-
 
 // TODO: app.js Instruction
 // BASE DE DONNEES
@@ -27,7 +25,6 @@ mongoose
 
   .then(() => console.log("Connexion à MongoDB réussie !"))
   .catch(() => console.log("Connexion à MongoDB échouée !"));
-
 
 // CORS Autorisation
 app.use((req, res, next) => {
@@ -47,7 +44,6 @@ app.use((req, res, next) => {
 app.use((req, res, next) => {
   res.json({ message: "Votre requête a bien été reçue !" });
 });
-
 
 app.use(bodyParser.json());
 
