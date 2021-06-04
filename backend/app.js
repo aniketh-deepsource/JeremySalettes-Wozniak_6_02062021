@@ -3,10 +3,17 @@
 // SERVER
 const express = require('express');
 const app = express();
+
 // BASE DE DONNEES
 const mongoose = require('mongoose');
+
 // USER
 const userRoutes = require('./routes/user');
+
+// DONNEES TRANSFORM JSON
+const bodyParser = require('body-parser');
+
+const sauceRoutes = require('./routes/sauce');
 
 //TODO: app.js Instruction
 // BASE DE DONNEES
@@ -37,6 +44,8 @@ app.use((req, res, next) => {
 	res.json({ message: 'Votre requête a bien été reçue !' });
 });
 
-// USER
+app.use(bodyParser.json());
+
 app.use('/api/auth', userRoutes);
+
 module.exports = app;
