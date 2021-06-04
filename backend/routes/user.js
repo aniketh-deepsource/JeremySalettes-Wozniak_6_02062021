@@ -1,17 +1,17 @@
-//TODO: User_Controllers declaration
-const express = require('express');
+// TODO: User_Controllers declaration
+const express = require("express");
 const router = express.Router();
 
-const userCtrl = require('../controllers/user');
+const userCtrl = require("../controllers/user");
 // IDENTIFICATION
-const auth = require('../middleware/auth');
+const auth = require("../middleware/auth");
 
-//TODO: User_Controllers instruction
+// TODO: User_Controllers instruction
 
 // INSCRIPTION
-router.post('/signup', userCtrl.signup);
+router.post("/signup", userCtrl.signup);
 // CONNECTION
-router.post('/login', userCtrl.login);
+router.post("/login", userCtrl.login);
 
-//TODO: User_Controllers exportation
+// TODO: User_Controllers exportation
 module.exports = router;
